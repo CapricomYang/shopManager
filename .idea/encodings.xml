@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/StartWebApp.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/controller/GoodsInfoController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/controller/UserController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/dao/MyBatisBaseDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/dao/TAddressDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/dao/TAdminDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/dao/TAdvertisementDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/dao/TAreaDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/dao/TArticleDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/dao/TCollectionDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/dao/TCommentDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/dao/TGoodsDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/dao/TOrderDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/dao/TOrderdetailsDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/dao/TSearchDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/dao/TTypeDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/dao/TUserinfoDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/entity/TAddress.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/entity/TAdmin.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/entity/TAdvertisement.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/entity/TArea.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/entity/TArticle.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/entity/TCollection.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/entity/TComment.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/entity/TGoods.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/entity/TOrder.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/entity/TOrderdetails.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/entity/TSearch.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/entity/TType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/entity/TUserinfo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/entity/UserInfo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/service/GoodsInfoServer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/jxufe/service/impl/GoodsInfoServerImpl.java" charset="UTF-8" />
+  </component>
+</project>

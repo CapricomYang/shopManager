@@ -16,32 +16,12 @@ import java.util.Map;
 
 @Controller
 public class UserController {
-    @RequestMapping("User")
-    @ResponseBody
-    public Object getUser(){
-        System.out.println("有一个请求来了");
-        Map map =new HashMap();
-        map.put("name","wuwenjie");
-        map.put("pwd","123");
-        return map;
-    }
 
-    @RequestMapping("Hello.html")
-    @ResponseBody
-    public Object getUser(Integer uid){
-        System.out.println("有一个请求来了，传入了一个参数"+uid);
-        System.out.println("调用业务类实现通过uid查询用户信息");
-        Map map = new HashMap();
-        map.put("uid",uid);
-        map.put("name","wuwenjie");
-        map.put("pwd","123");
-        return map;
-    }
     @RequestMapping("{path}")
     public String Toindex(@PathVariable(value = "path") String path){
-        System.out.println(path);
         return path;
     }
+
     @RequestMapping(value = "profile")
     public String test(ModelMap map){
         map.put("name","yqc");
@@ -50,6 +30,35 @@ public class UserController {
 
     }
 
+
+
+
+
+
+
+
+
+    //    @RequestMapping("User")
+//    @ResponseBody
+//    public Object getUser(){
+//        System.out.println("有一个请求来了");
+//        Map map =new HashMap();
+//        map.put("name","wuwenjie");
+//        map.put("pwd","123");
+//        return map;
+//    }
+
+//    @RequestMapping("Hello.html")
+//    @ResponseBody
+//    public Object getUser(Integer uid){
+//        System.out.println("有一个请求来了，传入了一个参数"+uid);
+//        System.out.println("调用业务类实现通过uid查询用户信息");
+//        Map map = new HashMap();
+//        map.put("uid",uid);
+//        map.put("name","wuwenjie");
+//        map.put("pwd","123");
+//        return map;
+//    }
 }
 
 /*

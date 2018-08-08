@@ -14,7 +14,7 @@ public class GoodsInfoController {
     @Autowired
     private GoodsInfoServer goodsInfoServer;
 
-    @RequestMapping("testgoods")
+    @RequestMapping("goodsdate")
     @ResponseBody
     public Object tsetGoodinfo(){
         return goodsInfoServer.findAllGoods();

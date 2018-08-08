@@ -7,8 +7,24 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="head.jsp"></jsp:include>
+<script>
+  $(function(){
+    $("#adv").datagrid({
+      columns:[[
+        {field:'goodsname',title:'商品名称',width:100,align:'center'},
+        {field:'description',title:'商品描述',width:100,align:'center'},
+        {field:'originalprice',title:'商品市价',width:100,align:'center'},
+        {field:'sellingprice',title:'商品售价',width:100,align:'center'}
+      ]],
+      url:"goodsdate"
+    })
+  })
+</script>
+
 <div id="content" region="center" title="" style="padding:5px;">
-    <h2>商品信息管理</h2>
+  <table id="adv">
+
+  </table>
 
 </div>
 <jsp:include page="tail.jsp"></jsp:include>

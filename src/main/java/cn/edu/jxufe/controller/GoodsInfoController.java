@@ -4,6 +4,7 @@ import cn.edu.jxufe.service.GoodsInfoServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -16,8 +17,17 @@ public class GoodsInfoController {
 
     @RequestMapping("goodsdate")
     @ResponseBody
-    public Object tsetGoodinfo(){
-        return goodsInfoServer.findAllGoods();
+    public Object tsetGoodinfo(@RequestParam(name = "page",defaultValue ="1") int page,@RequestParam(name = "rows",defaultValue ="10") int rows ){
+        System.out.println(page);
+        System.out.println(rows);
+        try {
+            return goodsInfoServer.findAllGoods(page, rows);
+        }catch (Exception e){
+            e.printStackTrace();
+            return "{errmsg:"+e.getMessage()+"}";
+
+        }
+
     }
 }
 /*

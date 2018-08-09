@@ -15,10 +15,11 @@
     <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="commentNum" jdbcType="INTEGER" property="commentnum" />
+    <result column="img" jdbcType="VARCHAR" property="img" />
   </resultMap>
   <sql id="Base_Column_List">
     goodsId, goodsName, originalPrice, sellingPrice, stock, description, typeId, transactionNum, 
-    likeNumber, designer, createTime, `status`, commentNum
+    likeNumber, designer, createTime, `status`, commentNum, img
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -35,12 +36,12 @@
       sellingPrice, stock, description, 
       typeId, transactionNum, likeNumber, 
       designer, createTime, `status`, 
-      commentNum)
+      commentNum, img)
     values (#{goodsid,jdbcType=INTEGER}, #{goodsname,jdbcType=VARCHAR}, #{originalprice,jdbcType=INTEGER}, 
       #{sellingprice,jdbcType=INTEGER}, #{stock,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, 
       #{typeid,jdbcType=INTEGER}, #{transactionnum,jdbcType=INTEGER}, #{likenumber,jdbcType=INTEGER}, 
       #{designer,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, 
-      #{commentnum,jdbcType=INTEGER})
+      #{commentnum,jdbcType=INTEGER}, #{img,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.edu.jxufe.entity.TGoods">
     insert into T_Goods
@@ -84,6 +85,9 @@
       <if test="commentnum != null">
         commentNum,
       </if>
+      <if test="img != null">
+        img,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="goodsid != null">
@@ -124,6 +128,9 @@
       </if>
       <if test="commentnum != null">
         #{commentnum,jdbcType=INTEGER},
+      </if>
+      <if test="img != null">
+        #{img,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -166,6 +173,9 @@
       <if test="commentnum != null">
         commentNum = #{commentnum,jdbcType=INTEGER},
       </if>
+      <if test="img != null">
+        img = #{img,jdbcType=VARCHAR},
+      </if>
     </set>
     where goodsId = #{goodsid,jdbcType=INTEGER}
   </update>
@@ -182,12 +192,11 @@
       designer = #{designer,jdbcType=VARCHAR},
       createTime = #{createtime,jdbcType=TIMESTAMP},
       `status` = #{status,jdbcType=INTEGER},
-      commentNum = #{commentnum,jdbcType=INTEGER}
+      commentNum = #{commentnum,jdbcType=INTEGER},
+      img = #{img,jdbcType=VARCHAR}
     where goodsId = #{goodsid,jdbcType=INTEGER}
   </update>
-
   <select id="findAllGoods" resultMap="BaseResultMap">
-    SELECT  * from T_Goods
+    SELECT * FROM T_Goods
   </select>
-
 </mapper>

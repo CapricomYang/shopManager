@@ -7,13 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="head.jsp"></jsp:include>
-
-<script>
-    $(function(){
-        var i=1;
-        alert(i);
-    })
-</script>
 <div id="content" region="center" title="" style="padding:5px;">
     <h2>广告信息管理</h2>
 

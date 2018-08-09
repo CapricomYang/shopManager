@@ -73,6 +73,11 @@ public class TGoods implements Serializable {
      */
     private Integer commentnum;
 
+    /**
+     * 商品图片
+     */
+    private String img;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getGoodsid() {
@@ -179,6 +184,14 @@ public class TGoods implements Serializable {
         this.commentnum = commentnum;
     }
 
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -203,7 +216,8 @@ public class TGoods implements Serializable {
             && (this.getDesigner() == null ? other.getDesigner() == null : this.getDesigner().equals(other.getDesigner()))
             && (this.getCreatetime() == null ? other.getCreatetime() == null : this.getCreatetime().equals(other.getCreatetime()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
-            && (this.getCommentnum() == null ? other.getCommentnum() == null : this.getCommentnum().equals(other.getCommentnum()));
+            && (this.getCommentnum() == null ? other.getCommentnum() == null : this.getCommentnum().equals(other.getCommentnum()))
+            && (this.getImg() == null ? other.getImg() == null : this.getImg().equals(other.getImg()));
     }
 
     @Override
@@ -223,6 +237,7 @@ public class TGoods implements Serializable {
         result = prime * result + ((getCreatetime() == null) ? 0 : getCreatetime().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
         result = prime * result + ((getCommentnum() == null) ? 0 : getCommentnum().hashCode());
+        result = prime * result + ((getImg() == null) ? 0 : getImg().hashCode());
         return result;
     }
 
@@ -245,6 +260,7 @@ public class TGoods implements Serializable {
         sb.append(", createtime=").append(createtime);
         sb.append(", status=").append(status);
         sb.append(", commentnum=").append(commentnum);
+        sb.append(", img=").append(img);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

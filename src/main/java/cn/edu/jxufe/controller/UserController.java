@@ -23,7 +23,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "profile")
-    public String test(ModelMap map){
+      public String test(ModelMap map){
         map.put("name","yqc");
         map.put("tel",123456);
         return "profile";

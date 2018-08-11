@@ -8,10 +8,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Created by 26708 on 2018/8/7.
@@ -27,13 +24,25 @@ public class GoodsInfoServerImpl implements GoodsInfoServer{
     }
 
     @Override
-    public Map findAllGoods(int page, int rows) {
-        PageHelper.startPage(page,rows);
-        PageInfo pageInfo=new PageInfo(tGoodsDAO.findAllGoods());
-        Map map=new HashMap<Object,Object>();
-        map.put("total",pageInfo.getTotal());
-        map.put("rows",pageInfo.getList());
-        return map;
+    public Map findAllGoods(int page, int rows,Integer name) {
+        if(name==-999){
+            PageHelper.startPage(page,rows);
+            PageInfo pageInfo=new PageInfo(tGoodsDAO.findAllGoods());
+
+            Map map=new HashMap<Object,Object>();
+            map.put("total",pageInfo.getTotal());
+            map.put("rows",pageInfo.getList());
+            return map;
+        }
+        else{
+            PageHelper.startPage(page,rows);
+            PageInfo pageInfo=new PageInfo(this.findGoods(name));
+            Map map=new HashMap<Object,Object>();
+            map.put("total",pageInfo.getTotal());
+            map.put("rows",pageInfo.getList());
+            return map;
+        }
+
     }
 
     @Override
@@ -50,6 +59,16 @@ public class GoodsInfoServerImpl implements GoodsInfoServer{
     public int deleteGoods(int id) {
         return tGoodsDAO.deleteByPrimaryKey(id);
     }
+
+    @Override
+    public List<TGoods> findGoods(int name) {
+        List<TGoods> list = new ArrayList<TGoods>();
+        list.add(tGoodsDAO.selectByPrimaryKey(name));
+        return list;
+
+    }
+
+
 }
 /*
 代码手中走~佛祖心中留！求永无BUG！

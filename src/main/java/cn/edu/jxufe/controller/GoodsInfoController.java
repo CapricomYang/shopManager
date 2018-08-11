@@ -31,11 +31,14 @@ public class GoodsInfoController {
 
     @RequestMapping("goodsdate")
     @ResponseBody
-    public Object tsetGoodinfo(@RequestParam(name = "page",defaultValue ="1") int page,@RequestParam(name = "rows",defaultValue ="20") int rows ){
+    public Object tsetGoodinfo(@RequestParam(name = "page",defaultValue ="1") int page,@RequestParam(name = "rows",defaultValue ="20") int rows ,@RequestParam(name = "name",defaultValue ="-999") Integer name){
         System.out.println(page);
         System.out.println(rows);
         try {
-            return goodsInfoServer.findAllGoods(page, rows);
+
+                return goodsInfoServer.findAllGoods(page, rows,name);
+
+
         }catch (Exception e){
             e.printStackTrace();
             return "{errmsg:"+e.getMessage()+"}";
@@ -82,6 +85,8 @@ public class GoodsInfoController {
         }
 
     }
+
+
 }
 /*
 代码手中走~佛祖心中留！求永无BUG！

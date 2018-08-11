@@ -79,49 +79,20 @@
             saveUrl:"goodssave",
             title: "商品列表",
             toolbar: "#tb"
-//            onDestroy:function(index,row){
-//                alert(row.msg);
-//
-//            },
-//            onError: function(index,row){
-//                alert();
-//            }
-//            ,
-
-            // 在双击一个单元格的时候开始编辑并生成编辑器，然后定位到编辑器的输入框上
-//            onDblClickCell: function (index, field, value) {
-//                $(this).datagrid('beginEdit', index);
-//                var ed = $(this).datagrid('getEditor', {index: index, field: field});
-//                $(ed.target).focus();
-//            }
-
-
-//      toolbar: [
-//
-//        {
-//        iconCls: 'icon-search',
-//
-//        text:"查询数据",
-//        handler: function(){alert('查询按钮')}
-//      },'-',{
-//        iconCls: 'icon-add',
-//        text:"添加数据",
-//        handler: function(){alert('添加按钮')}
-//      },'-',{
-//        iconCls: 'icon-remove',
-//        text:"删除数据",
-//        handler: function(){alert('删除按钮')}
-//
-//      },'-', {
-//        iconCls: 'icon-edit',
-//        text: "更新数据",
-//        handler: function () {alert('编辑按钮')}
-//
-//      }]
-
         })
     })
+
+    function selectGoodsByName(){
+        $("#adv").edatagrid('load', {
+            name: $("input:text[name='searchGoodsByName']").val(),
+
+
+
+        })
+
+    }
 </script>
+
 
 <div id="content" region="center" title="" style="padding:5px;">
     <table id="adv">
@@ -129,9 +100,9 @@
     </table>
     <div id="tb" style="background-color: lightblue;padding:10px 10px 10px 10px;">
 
-        输入商品名称查询<input type="text" name="standard.minLength" id="qMinLength"/>
+        输入商品ID查询<input type="text" name="searchGoodsByName" />
         <a href="#" class="easyui-linkbutton" iconCls="icon-search" plain="true"
-           onclick="javascript:alert('search')" style="background-color:honeydew;">搜索</a>
+           onclick="selectGoodsByName()" style="background-color:honeydew;">搜索</a>
         <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true"
            onclick="javascript:grid.edatagrid('addRow')"
            style="background-color:honeydew;">增加商品</a>

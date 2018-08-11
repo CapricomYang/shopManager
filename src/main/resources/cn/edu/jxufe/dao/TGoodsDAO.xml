@@ -200,7 +200,4 @@
     SELECT * FROM T_Goods
   </select>
 
-  <update id="updateGoods" parameterType="cn.edu.jxufe.entity.TGoods">
-
-  </update>
 </mapper>

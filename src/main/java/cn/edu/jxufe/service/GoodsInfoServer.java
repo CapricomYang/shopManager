@@ -11,10 +11,12 @@ import java.util.Map;
 
 public interface GoodsInfoServer {
     public List<TGoods> findAllGoods();
-    public Map findAllGoods(int page ,int rows);
+    public Map findAllGoods(int page ,int rows,Integer name);
     public int updateGoods(TGoods tGoods);
     public int addGoods(TGoods tGoods);
     public int deleteGoods(int id);
+    public List<TGoods> findGoods(int name);
+
 }
 /*
 代码手中走~佛祖心中留！求永无BUG！

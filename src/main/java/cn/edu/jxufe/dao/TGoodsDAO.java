@@ -15,4 +15,5 @@ public interface TGoodsDAO extends MyBatisBaseDao<TGoods, Integer> {
     public int updateGoods(TGoods tGoods);
     public int addGoods(TGoods tGoods);
     public int deleteGoods(int id);
+    public List<TGoods> findGoods(int t);
 }

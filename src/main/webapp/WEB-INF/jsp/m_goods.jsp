@@ -67,15 +67,9 @@
                 {
                     field: 'description', title: '商品描述', width: 500, align: 'left',
                     editor: {type: "text", options: {required: true}}
-                },
-
-                {
-                    field: 'edit', title: '保存修改', width: 80, align: 'center',
-                    formatter: function () {
-                        return "<a href=''>SAVE</a> ";
-                    }
                 }
             ]],
+            idField:"goodsid",
             url: "goodsdate",
             autoSave:true,
             pageList:[20, 40, 80,160],
@@ -135,7 +129,7 @@
     </table>
     <div id="tb" style="background-color: lightblue;padding:10px 10px 10px 10px;">
 
-        查询<input type="text" name="standard.minLength" id="qMinLength"/>
+        输入商品名称查询<input type="text" name="standard.minLength" id="qMinLength"/>
         <a href="#" class="easyui-linkbutton" iconCls="icon-search" plain="true"
            onclick="javascript:alert('search')" style="background-color:honeydew;">搜索</a>
         <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true"

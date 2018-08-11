@@ -35,6 +35,21 @@ public class GoodsInfoServerImpl implements GoodsInfoServer{
         map.put("rows",pageInfo.getList());
         return map;
     }
+
+    @Override
+    public int updateGoods(TGoods tGoods) {
+        return tGoodsDAO.updateByPrimaryKey(tGoods);
+    }
+
+    @Override
+    public int addGoods(TGoods tGoods) {
+        return tGoodsDAO.insertSelective(tGoods);
+    }
+
+    @Override
+    public int deleteGoods(int id) {
+        return tGoodsDAO.deleteByPrimaryKey(id);
+    }
 }
 /*
 代码手中走~佛祖心中留！求永无BUG！

@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
     <script type="text/javascript" src="easyui/js/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="easyui/js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="easyui/js/jquery.edatagrid.js"></script>
 </head>
 <body>
 <div class="easyui-layout" style="width:100%;height:100%;">

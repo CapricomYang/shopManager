@@ -12,6 +12,9 @@ import java.util.Map;
 public interface GoodsInfoServer {
     public List<TGoods> findAllGoods();
     public Map findAllGoods(int page ,int rows);
+    public int updateGoods(TGoods tGoods);
+    public int addGoods(TGoods tGoods);
+    public int deleteGoods(int id);
 }
 /*
 代码手中走~佛祖心中留！求永无BUG！

@@ -12,4 +12,7 @@ import java.util.List;
 @Repository
 public interface TGoodsDAO extends MyBatisBaseDao<TGoods, Integer> {
     public List<TGoods> findAllGoods();
+    public int updateGoods(TGoods tGoods);
+    public int addGoods(TGoods tGoods);
+    public int deleteGoods(int id);
 }

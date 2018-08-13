@@ -103,4 +103,7 @@
       updateTime = #{updatetime,jdbcType=TIMESTAMP}
     where telPhone = #{telphone,jdbcType=VARCHAR}
   </update>
+  <select id="findAllUser" resultMap="BaseResultMap">
+    SELECT * FROM T_UserInfo
+  </select>
 </mapper>

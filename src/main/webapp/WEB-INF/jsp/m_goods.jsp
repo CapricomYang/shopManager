@@ -39,7 +39,6 @@
                         return d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日" + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
                     }
                 },
-
                 {
                     field: 'typeid', title: '商品类型', width: 100, align: 'center',
                     formatter: function (v, r, i) {
@@ -56,14 +55,12 @@
                     },
                     editor: {type: 'numberbox', options: {required: true}}
                 },
-
                 {
                     field: 'img', title: '商品图片', width: 100, align: 'center', formatter: function (v, r, i) {
                     return "<img src=" + v + " height=20 />";
                 },
                     editor: {type: "text", options: {required: true}}
                 },
-
                 {
                     field: 'description', title: '商品描述', width: 500, align: 'left',
                     editor: {type: "text", options: {required: true}}
@@ -73,12 +70,13 @@
             url: "goodsdate",
             autoSave:true,
             pageList:[20, 40, 80,160],
-            singleselect:true,
             updateUrl:"goodsupdate",
             destroyUrl:"goodsdelete",
             saveUrl:"goodssave",
             title: "商品列表",
-            toolbar: "#tb"
+            toolbar: "#tb",
+            ctrlSelect:true,
+            selectOnCheck:true
         })
     })
 

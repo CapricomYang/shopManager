@@ -82,7 +82,7 @@
 
     function selectGoodsByName(){
         $("#adv").edatagrid('load', {
-            name: $("input:text[name='searchGoodsByName']").val(),
+            name: $("input:text[name='searchGoodsByName']").val()
 
 
 

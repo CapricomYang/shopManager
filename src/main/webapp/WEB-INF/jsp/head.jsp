@@ -25,19 +25,19 @@
             <li>
                 <span>饰品专卖管理</span>
                 <ul>
-                    <li><span><a href="m_goods"> 商品信息管理模块</a></span></li>
-                    <li><span><a href="m_user"> 用户信息管理模块</a></span></li>
-                    <li><span><a href="m_order"> 订单信息管理模块</a></span></li>
-                    <li><span><a href="m_kind"> 类别信息管理模块</a></span></li>
+                    <li><span><a href="jsp_m_goods"> 商品信息管理模块</a></span></li>
+                    <li><span><a href="jsp_m_user"> 用户信息管理模块</a></span></li>
+                    <li><span><a href="jsp_m_order"> 订单信息管理模块</a></span></li>
+                    <li><span><a href="jsp_m_kind"> 类别信息管理模块</a></span></li>
                 </ul>
             </li>
 
             <li>
                 <span>文本信息管理</span>
                 <ul>
-                    <li><span><a href="m_article"> 文章信息管理模块</a></span></li>
-                    <li><span><a href="m_comment"> 评论信息管理模块</a></span></li>
-                    <li><span><a href="m_advertisement"> 广告信息管理模块</a></span></li>
+                    <li><span><a href="jsp_m_article"> 文章信息管理模块</a></span></li>
+                    <li><span><a href="jsp_m_comment"> 评论信息管理模块</a></span></li>
+                    <li><span><a href="jsp_m_advertisement"> 广告信息管理模块</a></span></li>
                 </ul>
             </li>
         </ul>

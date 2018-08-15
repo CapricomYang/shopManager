@@ -7,6 +7,7 @@ import cn.edu.jxufe.service.GoodsInfoServer;
 import cn.edu.jxufe.service.UserInfoServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,22 +26,25 @@ public class LoginController {
     @Autowired
     private TUserinfoDAO tUserinfoDAO;
 
-    @RequestMapping("logindate")
-    public String loginTest(@RequestParam(name = "tel", defaultValue = "none") String tel, @RequestParam(name = "pwd", defaultValue = "none") String pwd) {
+    @RequestMapping("logindata")
+    public String loginTest(@RequestParam(name = "tel", defaultValue = "none") String tel, @RequestParam(name = "pwd", defaultValue = "none") String pwd, ModelMap map) {
 //        public String Toindex(@PathVariable(value = "path") String path){
 //            return  path;
 //        }
         System.out.println(tel + "dsd");
         try {
             TUserinfo u = tUserinfoDAO.selectByPrimaryKey(tel);
-            System.out.println(u.getPassword());
-            System.out.println(pwd);
-            if (u == null)
-                return "login";
-            if (u.getPassword().equals(pwd))
-                return "m_goods";
-            else
-                return "login";
+
+            if (u == null) {
+
+                return "loading";
+            } else {
+                if (u.getPassword().equals(pwd))
+                    return "m_goods";
+                else
+                    return "loading";
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
             return "{errmsg:" + e.getMessage() + "}";

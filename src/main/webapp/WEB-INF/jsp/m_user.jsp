@@ -28,7 +28,9 @@
           editor: {type: "text", options: {required: true}}
         },
         {
-          field: 'headimg', title: '用户头像', width: 130, align: 'center',
+          field: 'headimg', title: '用户头像', width: 130, align: 'center', formatter: function (v, r, i) {
+              return "<img src=" + v + " height=20 />";
+            },
           editor: {type: "text", options: {required: true}}
         },
         {
@@ -113,10 +115,6 @@
 
 
 
-    <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="javascript:grid.edatagrid('saveRow')"
-       style="background-color:honeydew;">保存修改</a>
-  </div>
 
-</div>
 <jsp:include page="tail.jsp"></jsp:include>
 

@@ -130,8 +130,18 @@
 
 
 
-        <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="javascript:grid.edatagrid('saveRow')"
-           style="background-color:honeydew;">保存修改</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="$('#win').window('open');"
+           style="background-color:honeydew;">上传图片</a>
+    </div>
+
+    <div id="win" class="easyui-window" title="上传图片" style="width:400px;height:200px ;font-family:'华文楷体';font-size: 16px;line-height: 40px; "
+         data-options="iconCls:'icon-save',modal:true,closed:true">
+        <form action="uploadimage" method="post" enctype="multipart/form-data">
+            请选择文件：
+            <input type="file" name="fs" style="width:300px;float: left;margin-left: 50px;">
+
+            <input type="submit" name="s" value="点击上传" style="float: left;margin-left: 50px;margin-top: 20px;">
+        </form>
     </div>
 
 </div>

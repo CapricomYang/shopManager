@@ -25,8 +25,20 @@
           editor: {type: "text", options: {required: true}}
         },
         {
-          field: 'issuper', title: '是否是超级管理员', width: 80, align: 'center'
-          ,editor: {type: "text", options: {required: true}}
+          field: 'issuper', title: '是否是超级管理员', width: 150, align: 'center',
+          formatter: function (v, r, i) {
+            switch (v) {
+              case true:
+                return "是";
+                break;
+              case false:
+                return "不是";
+                break;
+              default :
+                return "？？？";
+            }
+          },
+          editor: {type: "text", options: {required: true}}
 
         },
         {
@@ -49,7 +61,7 @@
 
       ]],
       idField:"id",
-      url: "admininfo",
+      url: "admindate",
       updateUrl:"updateadmininfo",
       autoSave:true,
       pageList:[20, 40, 80,160],

@@ -57,18 +57,6 @@ public class AdminController {
             return "{errmsg:"+e.getMessage()+"}";
         }
     }
-    @RequestMapping("admininfo")
-    @ResponseBody
-    public Object admininfo(HttpServletRequest httpServletRequest, Object o){
-        Object obj=httpServletRequest.getSession().getAttribute("loginuser");
-        Integer id = (Integer)obj;
-        try {
-            return adminInfoServer.findTAdmin(id);
-        }catch (Exception e){
-            e.printStackTrace();
-            return "{errmsg:"+e.getMessage()+"}";
-        }
-    }
     @RequestMapping("updateadmininfo")
     @ResponseBody
     public Object updateAdminPasswordinfo(HttpServletRequest httpServletRequest,TAdmin tAdmin){

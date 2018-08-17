@@ -14,7 +14,23 @@
       url:'datagrid_data.json',
       columns:[[
         {field:'id',title:'管理员id',width:100},
-        {field:'issuper',title:'管理员类别',width:100},
+        {
+          field: 'issuper', title: '管理员类别', width: 150, align: 'center',
+          formatter: function (v, r, i) {
+            switch (v) {
+              case true:
+                return "超级管理员";
+                break;
+              case false:
+                return "普通管理员";
+                break;
+              default :
+                return "？？？";
+            }
+          },
+          editor: {type: "text", options: {required: true}}
+
+        },
         {field:'password',title:'密码',width:100,align:'right' ,editor: {type: "text", options: {required: true}}}
       ]],
       url:"admin",

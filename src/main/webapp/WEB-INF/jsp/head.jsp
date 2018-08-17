@@ -17,8 +17,9 @@
 </head>
 <body>
 <div class="easyui-layout" style="width:100%;height:100%;">
-    <div region="north" split="true" title="" style="width:100%;height:80px;background-color:lightgoldenrodyellow;padding-left: 20px;">
-        <h1>饰品专卖后台管理</h1>
+    <div region="north" split="true" title="" style="width:100%;height:100px;background-color:lightgoldenrodyellow;padding-left: 20px;">
+      <h1>饰品专卖后台管理</h1>
+      <button style="float: right;margin-right: 10px;"><a href="jsp_loading">退出登录</a></button>
     </div>
     <div region="west" split="true" title="管理模块" style="width:200px;">
         <ul class="easyui-tree" style="font-size: 24px;">

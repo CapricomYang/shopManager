@@ -13,7 +13,7 @@
     id, content, img, title, createTime, author
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from T_Article
     where id = #{id,jdbcType=INTEGER}

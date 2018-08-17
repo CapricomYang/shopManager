@@ -20,7 +20,7 @@ public class OrderInfoController {
     private OrderInfoServer orderInfoServer;
     @RequestMapping("orderdate")
     @ResponseBody
-    public Object tsetGoodinfo(@RequestParam(name = "page",defaultValue ="1") int page,@RequestParam(name = "rows",defaultValue ="20") int rows ,@RequestParam(name = "name",defaultValue ="-999") Integer name){
+    public Object tsetGoodinfo(@RequestParam(name = "page",defaultValue ="1") int page,@RequestParam(name = "rows",defaultValue ="20") int rows ,@RequestParam(name = "name",defaultValue ="-999") long name){
         System.out.println(page);
         System.out.println(rows);
         try {
@@ -30,17 +30,21 @@ public class OrderInfoController {
             return "{errmsg:"+e.getMessage()+"}";
         }
     }
+
+
     @RequestMapping("orderupdate")
     @ResponseBody
-    public Object updateGoodinfo(TOrder tGoods){
+    public Object updateAdminPassword(TOrder tOrder){
         System.out.println("调用了更新数据");
         try {
-            return orderInfoServer.updateOrder(tGoods);
+            return orderInfoServer.updateOrder(tOrder);
         }catch (Exception e){
             e.printStackTrace();
             return "{errmsg:"+e.getMessage()+"}";
         }
     }
+
+
     @RequestMapping("ordersave")
     @ResponseBody
     public Object saveGoodinfo(TOrder tGoods){
@@ -54,9 +58,10 @@ public class OrderInfoController {
     }
     @RequestMapping("orderdelete")
     @ResponseBody
-    public Object deleteGoodinfo(int id){
-        System.out.println("调用了更新数据");
+    public Object deleteGoodinfo(long id){
+        System.out.println("调用了更新订单");
         try {
+            System.out.println("orserupdate!!!!!!!!!!!!!!");
             return orderInfoServer.deleteOrder(id);
         }catch (Exception e){
             e.printStackTrace();

@@ -16,21 +16,19 @@
       columns: [[
         {field: 'a', title: 'select', width: 100, align: 'center', checkbox: true},
         {
-          field: 'telphone', title: '电话号码', width: 100, align: 'center',
+          field: 'orderid', title: '订单号', width: 100, align: 'center',
           editor: {type: "text", options: {required: true}}
         },
         {
-          field: 'password', title: '密码', width: 80, align: 'left',
+          field: 'telphone', title: '电话号码', width: 80, align: 'left',
           editor: {type: "text", options: {required: true}}
         },
         {
-          field: 'nickname', title: '用户名称', width: 80, align: 'center',
+          field: 'orderremarks', title: '订单备注', width: 80, align: 'center',
           editor: {type: "text", options: {required: true}}
         },
         {
-          field: 'headimg', title: '用户头像', width: 130, align: 'center', formatter: function (v, r, i) {
-          return "<img src=" + v + " height=20 />";
-        },
+          field: 'orderstate', title: '订单类型', width: 130, align: 'center',
           editor: {type: "text", options: {required: true}}
         },
         {
@@ -42,18 +40,18 @@
           }
         },
         {
-          field: 'updatetime', title: '更新时间', width: 200, align: 'center',
-          editor: {type: "text", options: {required: true}},
-          formatter: function (v, r, i) {
-            var d = new Date(v);
-            return d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日" + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
-          }
+          field: 'totalprice', title: '总价', width: 200, align: 'center',
+          editor: {type: "text", options: {required: true}}
+        },{
+          field:'address',title:'地址',width:100,align:'center',
+          editor: {type: "text", options: {required: true}}
         }
 
       ]],
+      autoSave:true,
       idField:"orderid",
       url:"orderdate",
-      autoSave:true,
+
       pageList:[20, 40, 80,160],
       updateUrl:"orderupdate",
       destroyUrl:"orderdelete",
@@ -67,7 +65,7 @@
 
   function selectGoodsByName(){
     $("#adv").edatagrid('load', {
-      tel: $("input:text[name='searchGoodsByName']").val()
+      name: $("input:text[name='searchGoodsByName']").val()
 
 
 
@@ -83,14 +81,14 @@
   </table>
   <div id="tb" style="background-color: lightblue;padding:10px 10px 10px 10px;">
 
-    输入电话号码查询<input type="text" name="searchGoodsByName" />
+    输入订单编号<input type="text" name="searchGoodsByName" />
     <a href="#" class="easyui-linkbutton" iconCls="icon-search" plain="true"
        onclick="selectGoodsByName()" style="background-color:honeydew;">搜索</a>
     <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true"
        onclick="javascript:grid.edatagrid('addRow')"
-       style="background-color:honeydew;">增加用户</a>
+       style="background-color:honeydew;">增加订单</a>
 
     <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true"
-       onclick="javascript:grid.edatagrid('destroyRow')" style="background-color:honeydew;">删除用户</a>
+       onclick="javascript:grid.edatagrid('destroyRow')" style="background-color:honeydew;">删除订单</a>
 <jsp:include page="tail.jsp"></jsp:include>
 

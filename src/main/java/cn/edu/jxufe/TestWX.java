@@ -1,9 +1,9 @@
-package cn.edu.jxufe.service;
+package cn.edu.jxufe;
 
-import cn.edu.jxufe.entity.TOrder;
+import cn.edu.jxufe.service.impl.WxServerImpl;
+import cn.edu.jxufe.tool.NetTools;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @Author ${user}
@@ -11,14 +11,19 @@ import java.util.Map;
  * @thisprojece YQC
  * @Description github:https://github.com/CapricomYang
  */
-public interface OrderInfoServer {
-    public List<TOrder> findAllOrder();
-    public Map findAllOrder(int page ,int rows,long name);
-    public int updateOrder(TOrder tOrder);
-    public int addOrder(TOrder tOrder);
-    public int deleteOrder(long id);
-    public List<TOrder> findOrder(long name);
+public class TestWX {
 
+
+    public static void main(String[] args) {
+        WxServerImpl wxServer=new WxServerImpl();
+
+        String accessToken = wxServer.getAccessToken();
+        String url="https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token="+accessToken;
+        List<String> allUser = wxServer.getAllUser();
+        for (String s:allUser){
+            NetTools.postC(url,s);
+        }
+    }
 }
 /*
 代码手中走~佛祖心中留！求永无BUG！

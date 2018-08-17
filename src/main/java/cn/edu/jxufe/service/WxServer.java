@@ -1,9 +1,6 @@
 package cn.edu.jxufe.service;
 
-import cn.edu.jxufe.entity.TOrder;
-
 import java.util.List;
-import java.util.Map;
 
 /**
  * @Author ${user}
@@ -11,14 +8,12 @@ import java.util.Map;
  * @thisprojece YQC
  * @Description github:https://github.com/CapricomYang
  */
-public interface OrderInfoServer {
-    public List<TOrder> findAllOrder();
-    public Map findAllOrder(int page ,int rows,long name);
-    public int updateOrder(TOrder tOrder);
-    public int addOrder(TOrder tOrder);
-    public int deleteOrder(long id);
-    public List<TOrder> findOrder(long name);
+public interface WxServer {
+    public void sendImgTextMSGToALL(String jsonStr);
 
+    public String getAccessToken();
+
+    public List<String> getAllUser();
 }
 /*
 代码手中走~佛祖心中留！求永无BUG！

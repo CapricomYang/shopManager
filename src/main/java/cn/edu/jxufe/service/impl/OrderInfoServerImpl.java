@@ -30,7 +30,7 @@ public class OrderInfoServerImpl implements OrderInfoServer{
     }
 
     @Override
-    public Map findAllOrder(int page, int rows, Integer name) {
+    public Map findAllOrder(int page, int rows, long name) {
         if(name==-999){
             System.out.println("orderorderorderorderorderorderorderorderorder");
             PageHelper.startPage(page, rows);
@@ -63,12 +63,12 @@ public class OrderInfoServerImpl implements OrderInfoServer{
     }
 
     @Override
-    public int deleteOrder(int id) {
+    public int deleteOrder(long id) {
         return tOrderDAO.deleteByPrimaryKey(id);
     }
 
     @Override
-    public List<TOrder> findOrder(int name) {
+    public List<TOrder> findOrder(long name) {
         List<TOrder> list = new ArrayList<TOrder>();
         list.add(tOrderDAO.selectByPrimaryKey(name));
         return list;

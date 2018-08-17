@@ -25,21 +25,43 @@
           editor: {type: "text", options: {required: true}}
         },
         {
-          field: 'issuper', title: '是否是超级管理员', width: 150, align: 'center',
+          field: 'issuper', title: '管理员状态', width: 150, align: 'center',
           formatter: function (v, r, i) {
             switch (v) {
               case true:
-                return "是";
+                return "超级管理员";
                 break;
               case false:
-                return "不是";
+                return "普通管理员";
                 break;
               default :
                 return "？？？";
             }
-          },
-          editor: {type: "text", options: {required: true}}
+          }
 
+        },
+        {field: 'isdisabled', title: '创建时间', width: 200, align: 'center'
+        , formatter: function (v, r, i) {
+          switch (v) {
+            case true:
+              return "启用";
+              break;
+            case false:
+              return "禁用";
+              break;
+            default :
+              return "？？？";
+          }
+        },
+        editor: {
+              type: 'combobox',
+                      options: {
+                required: true,
+                        data: [{key: true, value: '启用'}, {key: false, value: '禁用'}],
+                        valueField: 'key',
+                        textField: 'value',
+                        panelHeight: 'auto'
+              }}
         },
         {
           field: 'createtime', title: '创建时间', width: 200, align: 'center',

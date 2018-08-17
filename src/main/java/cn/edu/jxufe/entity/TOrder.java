@@ -2,6 +2,8 @@ package cn.edu.jxufe.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * T_Order
@@ -11,7 +13,7 @@ public class TOrder implements Serializable {
     /**
      * 订单编号
      */
-    private Integer orderid;
+    private Long orderid;
 
     /**
      * 手机号（用户）
@@ -43,13 +45,24 @@ public class TOrder implements Serializable {
      */
     private String address;
 
+
+
+
+
+
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
     private static final long serialVersionUID = 1L;
 
-    public Integer getOrderid() {
+
+    public Long getOrderid() {
         return orderid;
     }
 
-    public void setOrderid(Integer orderid) {
+    public void setOrderid(Long orderid) {
         this.orderid = orderid;
     }
 
@@ -101,40 +114,6 @@ public class TOrder implements Serializable {
         this.address = address;
     }
 
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (that == null) {
-            return false;
-        }
-        if (getClass() != that.getClass()) {
-            return false;
-        }
-        TOrder other = (TOrder) that;
-        return (this.getOrderid() == null ? other.getOrderid() == null : this.getOrderid().equals(other.getOrderid()))
-            && (this.getTelphone() == null ? other.getTelphone() == null : this.getTelphone().equals(other.getTelphone()))
-            && (this.getOrderremarks() == null ? other.getOrderremarks() == null : this.getOrderremarks().equals(other.getOrderremarks()))
-            && (this.getCreatetime() == null ? other.getCreatetime() == null : this.getCreatetime().equals(other.getCreatetime()))
-            && (this.getOrderstate() == null ? other.getOrderstate() == null : this.getOrderstate().equals(other.getOrderstate()))
-            && (this.getTotalprice() == null ? other.getTotalprice() == null : this.getTotalprice().equals(other.getTotalprice()))
-            && (this.getAddress() == null ? other.getAddress() == null : this.getAddress().equals(other.getAddress()));
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((getOrderid() == null) ? 0 : getOrderid().hashCode());
-        result = prime * result + ((getTelphone() == null) ? 0 : getTelphone().hashCode());
-        result = prime * result + ((getOrderremarks() == null) ? 0 : getOrderremarks().hashCode());
-        result = prime * result + ((getCreatetime() == null) ? 0 : getCreatetime().hashCode());
-        result = prime * result + ((getOrderstate() == null) ? 0 : getOrderstate().hashCode());
-        result = prime * result + ((getTotalprice() == null) ? 0 : getTotalprice().hashCode());
-        result = prime * result + ((getAddress() == null) ? 0 : getAddress().hashCode());
-        return result;
-    }
 
     @Override
     public String toString() {

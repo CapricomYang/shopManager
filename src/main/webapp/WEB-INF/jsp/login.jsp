@@ -15,7 +15,7 @@
 
 <form id="ff" method="post" action="/logindate">
     <div>
-        <label for="tel">Name:</label>
+        <label for="name">Name:</label>
         <input class="easyui-validatebox" type="text" name="tel" data-options="required:true"/>
     </div>
     <div>

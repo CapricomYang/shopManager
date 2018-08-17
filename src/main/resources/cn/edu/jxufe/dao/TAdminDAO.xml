@@ -120,9 +120,9 @@
       <if test="createtime != null">
         createTime = #{createtime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updatetime != null">
-        updateTime = #{updatetime,jdbcType=TIMESTAMP},
-      </if>
+
+        updateTime = sysdate(),
+
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -138,4 +138,7 @@
       updateTime = #{updatetime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="findAllAdmin" resultMap="BaseResultMap">
+    SELECT * FROM T_Admin
+  </select>
 </mapper>

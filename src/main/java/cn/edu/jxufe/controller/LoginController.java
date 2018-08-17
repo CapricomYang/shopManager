@@ -1,6 +1,8 @@
 package cn.edu.jxufe.controller;
 
+import cn.edu.jxufe.dao.TAdminDAO;
 import cn.edu.jxufe.dao.TUserinfoDAO;
+import cn.edu.jxufe.entity.TAdmin;
 import cn.edu.jxufe.entity.TUserinfo;
 import cn.edu.jxufe.entity.UserInfo;
 import cn.edu.jxufe.service.GoodsInfoServer;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -24,24 +27,23 @@ import java.util.List;
 @Controller
 public class LoginController {
     @Autowired
-    private TUserinfoDAO tUserinfoDAO;
+    private TAdminDAO tAdminDAO;
 
     @RequestMapping("logindata")
-    public String loginTest(@RequestParam(name = "tel", defaultValue = "none") String tel, @RequestParam(name = "pwd", defaultValue = "none") String pwd, ModelMap map) {
+    public String loginTest(HttpSession session, @RequestParam(name = "name", defaultValue = "-999")int name, @RequestParam(name = "pwd", defaultValue = "none") String pwd, ModelMap map) {
 //        public String Toindex(@PathVariable(value = "path") String path){
 //            return  path;
 //        }
-        System.out.println(tel + "dsd");
+        System.out.println(name + "dsd");
         try {
-            TUserinfo u = tUserinfoDAO.selectByPrimaryKey(tel);
-
-            if (u == null) {
-
+            TAdmin t=tAdminDAO.selectByPrimaryKey(name);
+            if (t==null) {
                 return "loading";
             } else {
-                if (u.getPassword().equals(pwd))
+                if (t.getPassword().equals(pwd)) {
+                    session.setAttribute("loginuser", name);
                     return "m_goods";
-                else
+                } else
                     return "loading";
             }
 

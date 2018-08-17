@@ -60,10 +60,13 @@
         }
 
       ]],
+      autoSave:true,
       idField:"id",
       url: "admindate",
       updateUrl:"updateadmininfo",
-      autoSave:true,
+      saveUrl:"addadmininfo",
+      destroyUrl:"deleteadmininfo",
+      toolbar: "#tb",
       pageList:[20, 40, 80,160],
       title: "用户信息列表",
       ctrlSelect:true,
@@ -76,7 +79,14 @@
   <table id="adv">
   </table>
 </div>
+<div id="tb" style="background-color: lightblue;padding:10px 0px 10px 10px;">
+  <a href="#" class="easyui-linkbutton"  plain="true"
+     onclick="javascript:grid.edatagrid('addRow')"style="background-color:honeydew;"iconCls="icon-add">增加管理员</a>
 
+  <a href="#" class="easyui-linkbutton" iconCls="icon-destroy" plain="true" onclick="javascript:grid.edatagrid('destroyRow')"
+     style="background-color:honeydew;">删除管理员</a>
+
+</div>
 
 <div id="buttom" region="south" title="" style="padding:2px;width: 100%; height: 30px;text-align: center;background-color: lightgray">
   合众艾特-江财4班-杨庆超

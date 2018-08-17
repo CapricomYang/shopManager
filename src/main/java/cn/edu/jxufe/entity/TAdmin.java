@@ -26,7 +26,7 @@ public class TAdmin implements Serializable {
     /**
      * 登录次数
      */
-    private Integer logcount;
+    private Integer logcount=0;
 
     /**
      * 是否为超级管理员 1代表是， 0 代表不是

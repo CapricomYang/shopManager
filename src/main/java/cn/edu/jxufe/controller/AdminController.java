@@ -70,6 +70,41 @@ public class AdminController {
                 e.printStackTrace();
                 return "{errmsg:"+e.getMessage()+"}";
             }
+        }else{
+            System.out.println("不是超级管理员");
+            return "";
+        }
+
+    }
+    @RequestMapping("addadmininfo")
+    @ResponseBody
+    public Object addAdminPasswordinfo(HttpServletRequest httpServletRequest,TAdmin tAdmin){
+        Object obj=httpServletRequest.getSession().getAttribute("loginuser");
+        Integer id=(Integer)obj;
+        if (id==0){
+            System.out.println("调用了增加数据");
+            try {
+                return adminInfoServer.addTAdmin(tAdmin);
+            }catch (Exception e){
+                e.printStackTrace();
+                return "{errmsg:"+e.getMessage()+"}";
+            }
+        }else return "";
+
+    }
+    @RequestMapping("deleteadmininfo")
+    @ResponseBody
+    public Object deleteAdminPasswordinfo(HttpServletRequest httpServletRequest,int id){
+        Object obj=httpServletRequest.getSession().getAttribute("loginuser");
+        Integer num=(Integer)obj;
+        if (num==0){
+            System.out.println("调用了更新数据");
+            try {
+                return adminInfoServer.deleteTAdmin(id);
+            }catch (Exception e){
+                e.printStackTrace();
+                return "{errmsg:"+e.getMessage()+"}";
+            }
         }else return "";
 
     }

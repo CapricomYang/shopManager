@@ -27,8 +27,7 @@
               default :
                 return "？？？";
             }
-          },
-          editor: {type: "text", options: {required: true}}
+          }
 
         },
         {field:'password',title:'密码',width:100,align:'right' ,editor: {type: "text", options: {required: true}}}

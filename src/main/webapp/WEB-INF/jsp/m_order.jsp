@@ -51,13 +51,13 @@
         }
 
       ]],
-      idField:"telphone",
-      url: "userdate",
+      idField:"orderid",
+      url:"orderdate",
       autoSave:true,
       pageList:[20, 40, 80,160],
-      updateUrl:"userupdate",
-      destroyUrl:"userdelete",
-      saveUrl:"usersave",
+      updateUrl:"orderupdate",
+      destroyUrl:"orderdelete",
+      saveUrl:"ordersave",
       title: "用户信息列表",
       toolbar: "#tb",
       ctrlSelect:true,

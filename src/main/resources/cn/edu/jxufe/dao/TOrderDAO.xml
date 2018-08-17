@@ -114,4 +114,7 @@
       address = #{address,jdbcType=VARCHAR}
     where orderId = #{orderid,jdbcType=INTEGER}
   </update>
+  <select id="findAllOrder" resultMap="BaseResultMap">
+    SELECT * FROM T_Order
+  </select>
 </mapper>
